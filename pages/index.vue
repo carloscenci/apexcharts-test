@@ -1,11 +1,23 @@
 <template>
   <!-- <client-only> -->
   <div>
-    <div>
+    <!-- <div>
       <apexchart type="line" height="350" :options="chartOptions" :series="series"></apexchart>
     </div>
     <div>
       <apexchart type="radialBar" height="350" :options="plotOptions" :series="[67]"></apexchart>
+    </div> -->
+
+    <div>
+      <div>
+        <vue-speedometer
+          :value="555"
+          :forceRender="true"
+          needleColor="steelblue"
+          :needleTransitionDuration="4000"
+          needleTransition="easeElastic"
+        />
+      </div>
     </div>
   </div>
   <!-- </client-only> -->
@@ -13,17 +25,15 @@
 
 <script lang="ts">
 import { Vue, Component, Watch } from 'nuxt-property-decorator'
+import VueSpeedometer from "vue-speedometer";
 
 @Component({
-  meta: {
-    auth: {
-      requiresAuth: true,
-      requiredAccess: [1],
-    },
-  },
+  components: {
+    'vue-speedometer': VueSpeedometer
+  }
 })
-export default class ListaDeEventos extends Vue {
 
+export default class ListaDeEventos extends Vue {
   series = [
     {
       name: "High - 2013",
@@ -34,6 +44,7 @@ export default class ListaDeEventos extends Vue {
       data: [12, 11, 14, 18, 17, 13, 13]
     }
   ]
+
   chartOptions = {
     chart: {
       height: 350,

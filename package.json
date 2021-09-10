@@ -1,4 +1,6 @@
 {
+  "type": "module",
+  "exports": "./index.js",
   "name": "nuxt-apexcharts",
   "version": "1.0.0",
   "private": true,
@@ -14,6 +16,7 @@
     "nuxt": "^2.15.7",
     "nuxt-property-decorator": "^2.9.1",
     "vue-apexcharts": "^1.6.2",
+    "vue-speedometer": "^1.8.0",
     "vuetify": "^2.5.5"
   },
   "devDependencies": {

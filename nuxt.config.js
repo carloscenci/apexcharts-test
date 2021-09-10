@@ -4,6 +4,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - nuxt-apexcharts',
+    runtimeCompiler: true,
     title: 'nuxt-apexcharts',
     htmlAttrs: {
       lang: 'en'
@@ -26,6 +27,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vue-apexcharts.js', ssr: false, mode:'client' },
+    { src: '~/plugins/vue-speedometer.js'},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -64,6 +66,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    vendor: ['vue-apexchart'],
+    vendor: ['vue-apexchart', 'vue-speedometer', 'VueSpeedometer'],
+    standalone: true
   }
 }
